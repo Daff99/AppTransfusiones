@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.RegisterActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/image_initsesion" />
+
+    <TextView
+        android:id="@+id/textViewModify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="14dp"
+        android:fontFamily="@font/roboto_normal"
+        android:text="@string/modificarUsuario"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="329dp"
+        android:layout_height="51dp"
+        android:background="@drawable/corner_et"
+        android:drawableStart="@drawable/vector_asset_person"
+        android:layout_marginTop="20dp"
+        android:drawablePadding="16dp"
+        android:ems="10"
+        android:hint="@string/nombreyapellidos"
+        android:fontFamily="@font/roboto_normal"
+        android:inputType="textPersonName"
+        android:paddingStart="15dp"
+        android:textColor="@color/charColor"
+        android:textColorHint="@color/hintColor"
+        android:textStyle="bold"
+        app:helperTextTextColor="@color/redSecundario"
+        app:layout_constraintTop_toBottomOf="@+id/textViewModify"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="329dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/corner_et_disabled"
+        android:drawableStart="@drawable/vector_asset_email"
+        android:drawablePadding="16dp"
+        android:ems="10"
+        android:fontFamily="@font/roboto_normal"
+        android:inputType="textEmailAddress"
+        android:paddingStart="15dp"
+        android:focusable="false"
+        android:clickable="false"
+        android:textColor="@color/charColor"
+        android:textStyle="bold"
+        app:helperTextTextColor="@color/redSecundario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextName">
+
+    </EditText>
+
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="329dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/corner_et"
+        android:drawableStart="@drawable/vector_asset_lock"
+        android:drawablePadding="16dp"
+        android:ems="10"
+        android:fontFamily="@font/roboto_normal"
+        android:hint="@string/introduce_contraseña"
+        android:inputType="textPassword"
+        android:paddingStart="15dp"
+        android:textColor="@color/charColor"
+        android:textColorHint="@color/hintColor"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/editTextRepitePassword"
+        android:layout_width="329dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/corner_et"
+        android:drawableStart="@drawable/vector_asset_lock"
+        android:drawablePadding="16dp"
+        android:ems="10"
+        android:fontFamily="@font/roboto_normal"
+        android:hint="@string/repite"
+        android:inputType="textPassword"
+        android:paddingStart="15dp"
+        android:textColor="@color/charColor"
+        android:textColorHint="@color/hintColor"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/buttonModify"
+        android:layout_width="255dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/redSecundario"
+        android:fontFamily="@font/roboto_normal"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:text="@string/aplicarCambios"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextRepitePassword" />
+
+    <TextView
+        android:id="@+id/tv_powered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/roboto_normal"
+        android:text="@string/powered_by"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonModify" />
+
+    <ImageView
+        android:id="@+id/ivAtos"
+        android:layout_width="78dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="140dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonModify"
+        app:srcCompat="@drawable/atos_logo" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

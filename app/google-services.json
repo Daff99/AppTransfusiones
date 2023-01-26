@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "568989839697",
+    "project_id": "apptransfusiones",
+    "storage_bucket": "apptransfusiones.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568989839697:android:ade7d90ccc2349caf9a370",
+        "android_client_info": {
+          "package_name": "com.example.apptransfusiones"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "568989839697-rot0mrl22uqjli2ndlh64lp3vs5mrph2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.apptransfusiones",
+            "certificate_hash": "bf9d34e699a6b7a9d46b1b3008c6e8f0cd9c07ed"
+          }
+        },
+        {
+          "client_id": "568989839697-nrsrti8c5ds542q8cnd05posbt9btd70.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAy0t-wX8JKDJ7QLqfTQpwZxn2dVq78teg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "568989839697-nrsrti8c5ds542q8cnd05posbt9btd70.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

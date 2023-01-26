@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="Home"
+        android:icon="@drawable/vector_asset_home"
+        android:id="@+id/home"/>
+    <item android:title="@string/citas"
+        android:icon="@drawable/vector_asset_citas"
+        android:id="@+id/citas"/>
+    <item android:title="@string/perfil"
+        android:icon="@drawable/vector_asset_person"
+        android:id="@+id/perfil"/>
+    <item android:title="@string/tarjeta"
+        android:icon="@drawable/vector_asset_card"
+        android:id="@+id/tarjeta"/>
+    <item android:title="@string/eventos"
+        android:icon="@drawable/vector_asset_calendar"
+        android:id="@+id/eventos"/>
+</menu>

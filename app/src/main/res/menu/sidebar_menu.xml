@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_home"
+            android:icon="@drawable/vector_asset_home"
+            android:title="Home" />
+
+        <item android:id="@+id/nav_eventos"
+            android:icon="@drawable/vector_asset_calendar"
+            android:title="@string/eventos" />
+
+        <item android:id="@+id/nav_calendar"
+            android:icon="@drawable/vector_asset_citas"
+            android:title="@string/calendario" />
+
+        <item android:id="@+id/nav_ranking"
+            android:icon="@drawable/vector_asset_ranking"
+            android:title="@string/ranking" />
+
+        <item android:id="@+id/nav_manual"
+            android:icon="@drawable/vector_asset_manual"
+            android:title="@string/manual" />
+
+        <item android:id="@+id/nav_logout"
+            android:icon="@drawable/vector_asset_logout"
+            android:iconTint="@color/redSecundario"
+            android:title="@string/cerrar_sesion" />
+
+    </group>
+
+</menu>
