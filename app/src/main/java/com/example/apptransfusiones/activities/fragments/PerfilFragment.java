@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -21,20 +20,18 @@ import com.example.apptransfusiones.activities.ModifyActivity;
 import com.example.apptransfusiones.activities.otherClasses.ListAdapterPerfil;
 import com.example.apptransfusiones.activities.otherClasses.ListElement;
 import com.example.apptransfusiones.activities.otherClasses.RecyclerViewInterface;
-import com.example.apptransfusiones.databinding.ActivityHomeBinding;
 import com.example.apptransfusiones.databinding.FragmentPerfilBinding;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Locale;
 
 public class PerfilFragment extends Fragment implements RecyclerViewInterface {
 
     private FragmentPerfilBinding binding;
-    private ActivityHomeBinding bindingHome;
     private ArrayList<ListElement> lista;
     private FirebaseFirestore database;
 
@@ -48,7 +45,6 @@ public class PerfilFragment extends Fragment implements RecyclerViewInterface {
         super.onCreate(savedInstanceState);
 
         binding = FragmentPerfilBinding.inflate(getLayoutInflater(), container, false);
-        bindingHome = ActivityHomeBinding.inflate(getLayoutInflater());
 
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -86,6 +82,28 @@ public class PerfilFragment extends Fragment implements RecyclerViewInterface {
         });
 
          */
+
+        try {
+            InputStreamReader ins = new InputStreamReader(getContext().openFileInput("citas.txt"));
+            BufferedReader br = new BufferedReader(ins);
+            String linea = br.readLine(); //Leo la primera linea de texto de mi fichero
+            binding.tvFechaCita.setText(linea);
+            int lineIndex = 1;
+            boolean encontrado = false;
+            while (linea != null && !encontrado) {
+                if (lineIndex == 2) {
+                    encontrado = true;
+                    binding.tvHoraCita.setText(linea);
+                    break;
+                }
+                lineIndex ++;
+                linea = br.readLine();
+            }
+            br.close();
+            ins.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         return binding.getRoot();
     }

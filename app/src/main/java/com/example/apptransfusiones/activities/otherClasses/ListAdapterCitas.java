@@ -11,6 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apptransfusiones.R;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class ListAdapterCitas extends RecyclerView.Adapter<ListAdapterCitas.ViewHolder> {
@@ -35,8 +38,27 @@ public class ListAdapterCitas extends RecyclerView.Adapter<ListAdapterCitas.View
         holder.nombre.setText(listaElementos.get(position).getNombreHospital());
         holder.direccion.setText(listaElementos.get(position).getDireccionHospital());
         holder.ciudad.setText(listaElementos.get(position).getCiudadHospital());
-        holder.fecha.setText(listaElementos.get(position).getFecha());
-        holder.hora.setText(listaElementos.get(position).getHora());
+        try {
+            InputStreamReader ins = new InputStreamReader(this.contexto.openFileInput("citas.txt"));
+            BufferedReader br = new BufferedReader(ins);
+            String linea = br.readLine(); //Leo la primera linea de texto de mi fichero
+            holder.fecha.setText(linea);
+            int lineIndex = 1;
+            boolean encontrado = false;
+            while (linea != null && !encontrado) {
+                if (lineIndex == 2) {
+                    encontrado = true;
+                    holder.hora.setText(linea);
+                    break;
+                }
+                lineIndex ++;
+                linea = br.readLine();
+            }
+            br.close();
+            ins.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

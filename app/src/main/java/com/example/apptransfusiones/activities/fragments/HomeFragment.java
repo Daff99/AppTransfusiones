@@ -13,6 +13,9 @@ import com.example.apptransfusiones.activities.otherClasses.ListAdapterHorizonta
 import com.example.apptransfusiones.activities.otherClasses.ListElementHorizontal;
 import com.example.apptransfusiones.databinding.FragmentHomeBinding;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 
@@ -38,6 +41,28 @@ public class HomeFragment extends Fragment {
 
         ListAdapterHorizontal adapter = new ListAdapterHorizontal(lista, getContext());
         binding.recyclerViewHorizontal.setAdapter(adapter);
+
+        try {
+            InputStreamReader ins = new InputStreamReader(getContext().openFileInput("citas.txt"));
+            BufferedReader br = new BufferedReader(ins);
+            String linea = br.readLine(); //Leo la primera linea de texto de mi fichero
+            binding.tvFechaCita.setText(linea);
+            int lineIndex = 1;
+            boolean encontrado = false;
+            while (linea != null && !encontrado) {
+                if (lineIndex == 2) {
+                    encontrado = true;
+                    binding.tvHoraCita.setText(linea);
+                    break;
+                }
+                lineIndex ++;
+                linea = br.readLine();
+            }
+            br.close();
+            ins.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         return binding.getRoot();
     }
